@@ -7,8 +7,7 @@
 ;(function(){
 	
 	var css = [
-		"http://www.yahoo.co.jp/",
-		"http://s.yimg.jp/images/top/sp2/clr/170307/1.css"
+		"common.css"
 	];
 	
 	// start
