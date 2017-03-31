@@ -6,10 +6,31 @@
 */
 ;(function(){
 	
+	var css = [
+		"http://www.yahoo.co.jp/",
+		"http://s.yimg.jp/images/top/sp2/clr/170307/1.css"
+	];
+	
 	// start
 	var $$ = function(){
 		
+		for(var i=0; i<css.length; i++){
+			if(!css[i]){continue}
+			this.lib.ajax.set({
+				url:css[i],
+				method:"POST",
+				async:true,
+				onSuccess:$$.prototype.setStyle
+			});
+		}
 		
+	};
+	
+	$$.prototype.setStyle = function(res){
+		var style = document.createElement("style");
+		style.type = "text/css";
+		style.innerHTML = res;
+		document.head.appendChild(style);
 	};
 	
 	
